@@ -1,0 +1,1604 @@
+2021-08-24 17:41:46,924 INFO c.c.h.e.i.ExcelImporterApplication [main] Starting ExcelImporterApplication on BBALAP1 with PID 107812 (C:\Users\BBA\Downloads\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE\Highlight-Excel-5.3.50-RELEASE.jar started by BBA in C:\Users\BBA\Downloads\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE)
+2021-08-24 17:41:46,930 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Running with Spring Boot v1.5.16.RELEASE, Spring v4.3.19.RELEASE
+2021-08-24 17:41:46,931 INFO c.c.h.e.i.ExcelImporterApplication [main] No active profile set, falling back to default profiles: default
+2021-08-24 17:42:00,823 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Application version: 5.3.50-RELEASE
+2021-08-24 17:42:00,823 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter host: https://rpa.casthiglight.com
+2021-08-24 17:42:00,823 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter file: Highlight-Excel_lti.xlsx
+2021-08-24 17:42:00,889 DEBUG c.c.h.e.i.d.DomainsExporter [main] Calling url https://rpa.casthiglight.com/domains
+2021-08-24 17:42:04,802 ERROR o.s.b.SpringApplication [main] Application startup failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:726) ~[spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:713) [spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703) [spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304) [spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at com.castsoftware.highlight.excel.importer.ExcelImporterApplication.main(ExcelImporterApplication.java:45) [classes!/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_301]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_301]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_301]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_301]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48) [Highlight-Excel-5.3.50-RELEASE.jar:?]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87) [Highlight-Excel-5.3.50-RELEASE.jar:?]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50) [Highlight-Excel-5.3.50-RELEASE.jar:?]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51) [Highlight-Excel-5.3.50-RELEASE.jar:?]
+Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "https://rpa.casthiglight.com/domains": rpa.casthiglight.com; nested exception is java.net.UnknownHostException: rpa.casthiglight.com
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:674) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:621) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:539) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at com.castsoftware.highlight.excel.importer.domain.DomainsExporter.getDatas(DomainsExporter.java:50) ~[classes!/:?]
+	at com.castsoftware.highlight.excel.importer.AbstractExporter.exportDatas(AbstractExporter.java:45) ~[classes!/:?]
+	at com.castsoftware.highlight.excel.importer.service.ExporterServiceImpl.exportData(ExporterServiceImpl.java:32) ~[classes!/:?]
+	at com.castsoftware.highlight.excel.importer.ExcelImporterApplication.run(ExcelImporterApplication.java:67) ~[classes!/:?]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:723) ~[spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	... 14 more
+Caused by: java.net.UnknownHostException: rpa.casthiglight.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[?:1.8.0_301]
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source) ~[?:1.8.0_301]
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source) ~[?:1.8.0_301]
+	at java.net.InetAddress.getAllByName0(Unknown Source) ~[?:1.8.0_301]
+	at java.net.InetAddress.getAllByName(Unknown Source) ~[?:1.8.0_301]
+	at java.net.InetAddress.getAllByName(Unknown Source) ~[?:1.8.0_301]
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.conn.BasicHttpClientConnectionManager.connect(BasicHttpClientConnectionManager.java:313) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:89) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:660) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:621) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:539) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at com.castsoftware.highlight.excel.importer.domain.DomainsExporter.getDatas(DomainsExporter.java:50) ~[classes!/:?]
+	at com.castsoftware.highlight.excel.importer.AbstractExporter.exportDatas(AbstractExporter.java:45) ~[classes!/:?]
+	at com.castsoftware.highlight.excel.importer.service.ExporterServiceImpl.exportData(ExporterServiceImpl.java:32) ~[classes!/:?]
+	at com.castsoftware.highlight.excel.importer.ExcelImporterApplication.run(ExcelImporterApplication.java:67) ~[classes!/:?]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:723) ~[spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	... 14 more
+2021-08-24 17:44:05,914 INFO c.c.h.e.i.ExcelImporterApplication [main] Starting ExcelImporterApplication on BBALAP1 with PID 112820 (C:\Users\BBA\Downloads\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE\Highlight-Excel-5.3.50-RELEASE.jar started by BBA in C:\Users\BBA\Downloads\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE)
+2021-08-24 17:44:05,920 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Running with Spring Boot v1.5.16.RELEASE, Spring v4.3.19.RELEASE
+2021-08-24 17:44:05,921 INFO c.c.h.e.i.ExcelImporterApplication [main] No active profile set, falling back to default profiles: default
+2021-08-24 17:44:16,917 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Application version: 5.3.50-RELEASE
+2021-08-24 17:44:16,917 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter host: https://rpa.casthiglight.com/WS2/domains/9332
+2021-08-24 17:44:16,917 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter file: Highlight-Excel_lti.xlsx
+2021-08-24 17:44:16,995 DEBUG c.c.h.e.i.d.DomainsExporter [main] Calling url https://rpa.casthiglight.com/WS2/domains/9332/domains
+2021-08-24 17:44:19,610 ERROR o.s.b.SpringApplication [main] Application startup failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:726) ~[spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:713) [spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703) [spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304) [spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at com.castsoftware.highlight.excel.importer.ExcelImporterApplication.main(ExcelImporterApplication.java:45) [classes!/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_301]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_301]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_301]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_301]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48) [Highlight-Excel-5.3.50-RELEASE.jar:?]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87) [Highlight-Excel-5.3.50-RELEASE.jar:?]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50) [Highlight-Excel-5.3.50-RELEASE.jar:?]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51) [Highlight-Excel-5.3.50-RELEASE.jar:?]
+Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "https://rpa.casthiglight.com/WS2/domains/9332/domains": rpa.casthiglight.com; nested exception is java.net.UnknownHostException: rpa.casthiglight.com
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:674) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:621) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:539) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at com.castsoftware.highlight.excel.importer.domain.DomainsExporter.getDatas(DomainsExporter.java:50) ~[classes!/:?]
+	at com.castsoftware.highlight.excel.importer.AbstractExporter.exportDatas(AbstractExporter.java:45) ~[classes!/:?]
+	at com.castsoftware.highlight.excel.importer.service.ExporterServiceImpl.exportData(ExporterServiceImpl.java:32) ~[classes!/:?]
+	at com.castsoftware.highlight.excel.importer.ExcelImporterApplication.run(ExcelImporterApplication.java:67) ~[classes!/:?]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:723) ~[spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	... 14 more
+Caused by: java.net.UnknownHostException: rpa.casthiglight.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[?:1.8.0_301]
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source) ~[?:1.8.0_301]
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source) ~[?:1.8.0_301]
+	at java.net.InetAddress.getAllByName0(Unknown Source) ~[?:1.8.0_301]
+	at java.net.InetAddress.getAllByName(Unknown Source) ~[?:1.8.0_301]
+	at java.net.InetAddress.getAllByName(Unknown Source) ~[?:1.8.0_301]
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.conn.BasicHttpClientConnectionManager.connect(BasicHttpClientConnectionManager.java:313) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.6.jar!/:4.5.6]
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:89) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:660) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:621) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:539) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at com.castsoftware.highlight.excel.importer.domain.DomainsExporter.getDatas(DomainsExporter.java:50) ~[classes!/:?]
+	at com.castsoftware.highlight.excel.importer.AbstractExporter.exportDatas(AbstractExporter.java:45) ~[classes!/:?]
+	at com.castsoftware.highlight.excel.importer.service.ExporterServiceImpl.exportData(ExporterServiceImpl.java:32) ~[classes!/:?]
+	at com.castsoftware.highlight.excel.importer.ExcelImporterApplication.run(ExcelImporterApplication.java:67) ~[classes!/:?]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:723) ~[spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	... 14 more
+2021-08-24 17:45:16,026 INFO c.c.h.e.i.ExcelImporterApplication [main] Starting ExcelImporterApplication on BBALAP1 with PID 107580 (C:\Users\BBA\Downloads\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE\Highlight-Excel-5.3.50-RELEASE.jar started by BBA in C:\Users\BBA\Downloads\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE)
+2021-08-24 17:45:16,032 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Running with Spring Boot v1.5.16.RELEASE, Spring v4.3.19.RELEASE
+2021-08-24 17:45:16,032 INFO c.c.h.e.i.ExcelImporterApplication [main] No active profile set, falling back to default profiles: default
+2021-08-24 17:45:27,472 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Application version: 5.3.50-RELEASE
+2021-08-24 17:45:27,473 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter host: https://rpa.casthighlight.com/WS2/domains/9332
+2021-08-24 17:45:27,473 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter file: Highlight-Excel_lti.xlsx
+2021-08-24 17:45:27,534 DEBUG c.c.h.e.i.d.DomainsExporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/9332/domains
+2021-08-24 17:45:34,644 DEBUG c.c.h.e.i.d.DomainsExporter [main] Rest API response 
+[ {
+  "id" : 9332,
+  "name" : "L&T Infotech LTD",
+  "parent" : {
+    "id" : 1,
+    "name" : "R&D",
+    "parent" : {
+      "id" : -1
+    }
+  }
+}, {
+  "id" : 13462,
+  "name" : "InternalApps",
+  "parent" : {
+    "id" : 9332,
+    "name" : "L&T Infotech LTD",
+    "parent" : {
+      "id" : 1
+    }
+  }
+}, {
+  "id" : 14502,
+  "name" : "Canvas",
+  "parent" : {
+    "id" : 13462,
+    "name" : "InternalApps",
+    "parent" : {
+      "id" : 9332
+    }
+  }
+}, {
+  "id" : 15077,
+  "name" : "Mosaic",
+  "parent" : {
+    "id" : 13462,
+    "name" : "InternalApps",
+    "parent" : {
+      "id" : 9332
+    }
+  }
+}, {
+  "id" : 15334,
+  "name" : "Cloud",
+  "parent" : {
+    "id" : 13462,
+    "name" : "InternalApps",
+    "parent" : {
+      "id" : 9332
+    }
+  }
+}, {
+  "id" : 15340,
+  "name" : "Other",
+  "parent" : {
+    "id" : 13462,
+    "name" : "InternalApps",
+    "parent" : {
+      "id" : 9332
+    }
+  }
+} ]
+2021-08-24 17:45:36,215 DEBUG c.c.h.e.i.u.UsersExporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/9332/users?expand=role
+2021-08-24 17:45:37,138 DEBUG c.c.h.e.i.u.UsersExporter [main] Rest API response 
+[ {
+  "id" : 13334,
+  "email" : "Aarya.Karambelkar@lntinfotech.com",
+  "firstName" : "Aarya",
+  "lastName" : "Karambelkar",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 12323,
+  "email" : "Ajay.Mahore@lntinfotech.com",
+  "firstName" : "Ajay",
+  "lastName" : "Mahore",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "contributor"
+  } ]
+}, {
+  "id" : 13669,
+  "email" : "Ajinkyajayant.Dharap@lntinfotech.com",
+  "firstName" : "Ajinkyajayant",
+  "lastName" : "Dharap",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 16646,
+  "email" : "Aman.Singhvi@lntinfotech.com",
+  "firstName" : "Aman",
+  "lastName" : "Singhvi",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 15077,
+    "domain_name" : "Mosaic",
+    "role" : "domainContributor"
+  } ]
+}, {
+  "id" : 16647,
+  "email" : "Amit.Boke@lntinfotech.com",
+  "firstName" : "Amit",
+  "lastName" : "B",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 15077,
+    "domain_name" : "Mosaic",
+    "role" : "domainContributor"
+  } ]
+}, {
+  "id" : 13563,
+  "email" : "Anup.Vajareenkar@lntinfotech.com",
+  "firstName" : "Anup",
+  "lastName" : "Vajareenkar",
+  "status" : "invited",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 13544,
+  "email" : "Atul.Chauhan@lntinfotech.com",
+  "firstName" : "Atul",
+  "lastName" : "Chauhan",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 11920,
+  "email" : "b.prakash+LTI@castsoftware.com",
+  "firstName" : "Bhanu",
+  "lastName" : "Prakash",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 9332,
+    "domain_name" : "L&T Infotech LTD",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 13543,
+  "email" : "Bharat.Dholaria@lntinfotech.com",
+  "firstName" : "Bharat",
+  "lastName" : "Dholaria",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 12161,
+  "email" : "bharat.trivedi@lntinfotech.com",
+  "firstName" : "Bharat",
+  "lastName" : "Trivedi",
+  "status" : "invited",
+  "roles" : [ {
+    "domain_id" : 9332,
+    "domain_name" : "L&T Infotech LTD",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 14336,
+  "email" : "Brijesh.Prabhakar@lntinfotech.com",
+  "firstName" : "Brijesh",
+  "lastName" : "Prabhakar",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 9332,
+    "domain_name" : "L&T Infotech LTD",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 12995,
+  "email" : "MadanMohan.Mogili@lntinfotech.com",
+  "firstName" : "MadanMohan",
+  "lastName" : "Mogili",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 9332,
+    "domain_name" : "L&T Infotech LTD",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 13335,
+  "email" : "Meena.Malu@lntinfotech.com",
+  "firstName" : "Meena",
+  "lastName" : "Malu",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 13462,
+    "domain_name" : "InternalApps",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 12322,
+  "email" : "Minhaj.Bakhsh@lntinfotech.com",
+  "firstName" : "Minhaj",
+  "lastName" : "Bakhsh",
+  "status" : "invited",
+  "roles" : [ {
+    "domain_id" : 9332,
+    "domain_name" : "L&T Infotech LTD",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 13668,
+  "email" : "Neha.Jambotkar@lntinfotech.com",
+  "firstName" : "Neha",
+  "lastName" : "Jambotkar",
+  "status" : "invited",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 13564,
+  "email" : "PURU.PARMAR@lntinfotech.com",
+  "firstName" : "PURU",
+  "lastName" : "PARMAR",
+  "status" : "invited",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 13565,
+  "email" : "RIYA.PATIL@lntinfotech.com",
+  "firstName" : "RIYA",
+  "lastName" : "PATIL",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 8907,
+  "email" : "Shivaramakrishnan.Iyer@lntinfotech.com",
+  "firstName" : "Shivaramakrishnan",
+  "lastName" : "Iyer",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 9332,
+    "domain_name" : "L&T Infotech LTD",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 8925,
+  "email" : "a.sinha2+LTI@castsoftware.com",
+  "firstName" : "a",
+  "lastName" : "sinha2+LTI",
+  "status" : "invited",
+  "roles" : [ {
+    "domain_id" : 9332,
+    "domain_name" : "L&T Infotech LTD",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 8924,
+  "email" : "abhishek.sinha+LTI@castsoftware.com",
+  "firstName" : "abhishek",
+  "lastName" : "sinha+LTI",
+  "status" : "invited",
+  "roles" : [ {
+    "domain_id" : 9332,
+    "domain_name" : "L&T Infotech LTD",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16670,
+  "email" : "adityar.mehta@lntinfotech.com",
+  "firstName" : "adityar",
+  "lastName" : "mehta",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 16916,
+  "email" : "anil.kinge@lntinfotech.com",
+  "firstName" : "anil",
+  "lastName" : "kinge",
+  "status" : "invited",
+  "roles" : [ {
+    "domain_id" : 15340,
+    "domain_name" : "Other",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 12996,
+  "email" : "b.prakash+test@castsoftware.com",
+  "firstName" : "b",
+  "lastName" : "prakash+test",
+  "status" : "invited",
+  "roles" : [ {
+    "domain_id" : 9332,
+    "domain_name" : "L&T Infotech LTD",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 11925,
+  "email" : "bhanu22.lti@gmail.com",
+  "firstName" : "bhanu",
+  "lastName" : "lti",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 13462,
+    "domain_name" : "InternalApps",
+    "role" : "contributor"
+  } ]
+}, {
+  "id" : 13809,
+  "email" : "chiranjeevi.v@lntinfotech.com",
+  "firstName" : "chiranjeevi",
+  "lastName" : "v",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "contributor"
+  } ]
+}, {
+  "id" : 16917,
+  "email" : "golimi.babu@lntinfotech.com",
+  "firstName" : "golimi",
+  "lastName" : "babu",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 15340,
+    "domain_name" : "Other",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 13596,
+  "email" : "govindan.ramasamy@lntinfotech.com",
+  "firstName" : "govindan",
+  "lastName" : "ramasamy",
+  "status" : "invited",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 12160,
+  "email" : "kamlesh.mali@lntinfotech.com",
+  "firstName" : "kamlesh",
+  "lastName" : "mali",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 9332,
+    "domain_name" : "L&T Infotech LTD",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 13546,
+  "email" : "mahesh1.jadhav@lntinfotech.com",
+  "firstName" : "mahesh1",
+  "lastName" : "jadhav",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 15112,
+  "email" : "nageswararao.kallagunta@lntinfotech.com",
+  "firstName" : "nageswararao",
+  "lastName" : "kallagunta",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 13462,
+    "domain_name" : "InternalApps",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 16671,
+  "email" : "navneet.kumar@lntinfotech.com",
+  "firstName" : "navneet",
+  "lastName" : "kumar",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 13545,
+  "email" : "sabir.tak@lntinfotech.com",
+  "firstName" : "sabir",
+  "lastName" : "tak",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 13810,
+  "email" : "sagar.pise@lntinfotech.com",
+  "firstName" : "sagar",
+  "lastName" : "pise",
+  "status" : "invited",
+  "roles" : [ {
+    "domain_id" : 14502,
+    "domain_name" : "Canvas",
+    "role" : "contributor"
+  } ]
+}, {
+  "id" : 16918,
+  "email" : "saigiri.ella@lntinfotech.com",
+  "firstName" : "saigiri",
+  "lastName" : "ella",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 15340,
+    "domain_name" : "Other",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 13103,
+  "email" : "Santhosh.Anumolu@lntinfotech.com",
+  "firstName" : "santhosh",
+  "lastName" : "anumolu",
+  "status" : "invited",
+  "roles" : [ {
+    "domain_id" : 9332,
+    "domain_name" : "L&T Infotech LTD",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 15113,
+  "email" : "sreenivasulu.pavali@lntinfotech.com",
+  "firstName" : "sreenivasulu",
+  "lastName" : "pavali",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 13462,
+    "domain_name" : "InternalApps",
+    "role" : "viewer"
+  } ]
+}, {
+  "id" : 12997,
+  "email" : "sunil.agrawal+LTI@lntinfotech.com",
+  "firstName" : "sunil",
+  "lastName" : "agrawal+LTI",
+  "status" : "invited",
+  "roles" : [ {
+    "domain_id" : 9332,
+    "domain_name" : "L&T Infotech LTD",
+    "role" : "manager"
+  } ]
+} ]
+2021-08-24 17:45:37,429 DEBUG c.c.h.e.i.a.ApplicationsExporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/9332/applications
+2021-08-24 17:46:52,595 DEBUG c.c.h.e.i.a.ApplicationsExporter [main] Rest API response 
+[ {
+  "id" : 62434,
+  "name" : "BPAC",
+  "domains" : [ {
+    "id" : 15340,
+    "name" : "Other"
+  } ]
+}, {
+  "id" : 70299,
+  "name" : "Botzer",
+  "domains" : [ {
+    "id" : 15334,
+    "name" : "Cloud"
+  } ]
+}, {
+  "id" : 59206,
+  "name" : "Canvas DevOps",
+  "domains" : [ {
+    "id" : 14502,
+    "name" : "Canvas"
+  } ]
+}, {
+  "id" : 59202,
+  "name" : "Canvas Engineering",
+  "domains" : [ {
+    "id" : 14502,
+    "name" : "Canvas"
+  } ]
+}, {
+  "id" : 59207,
+  "name" : "Canvas Façade",
+  "domains" : [ {
+    "id" : 14502,
+    "name" : "Canvas"
+  } ]
+}, {
+  "id" : 59201,
+  "name" : "Canvas Insights",
+  "domains" : [ {
+    "id" : 14502,
+    "name" : "Canvas"
+  } ]
+}, {
+  "id" : 105767,
+  "name" : "Canvas Modernization",
+  "domains" : [ {
+    "id" : 14502,
+    "name" : "Canvas"
+  } ]
+}, {
+  "id" : 59203,
+  "name" : "Canvas Resilience",
+  "domains" : [ {
+    "id" : 14502,
+    "name" : "Canvas"
+  } ]
+}, {
+  "id" : 59204,
+  "name" : "Canvas Transition",
+  "domains" : [ {
+    "id" : 14502,
+    "name" : "Canvas"
+  } ]
+}, {
+  "id" : 62421,
+  "name" : "Cloud Ensure",
+  "domains" : [ {
+    "id" : 15334,
+    "name" : "Cloud"
+  } ]
+}, {
+  "id" : 62456,
+  "name" : "EPRMS",
+  "domains" : [ {
+    "id" : 15340,
+    "name" : "Other"
+  } ]
+}, {
+  "id" : 99802,
+  "name" : "Green Channel",
+  "domains" : [ {
+    "id" : 15340,
+    "name" : "Other"
+  } ]
+}, {
+  "id" : 71363,
+  "name" : "Leni",
+  "domains" : [ {
+    "id" : 15340,
+    "name" : "Other"
+  } ]
+}, {
+  "id" : 61609,
+  "name" : "Mosaic AI",
+  "domains" : [ {
+    "id" : 15077,
+    "name" : "Mosaic"
+  } ]
+}, {
+  "id" : 61610,
+  "name" : "Mosaic AI Ops",
+  "domains" : [ {
+    "id" : 15077,
+    "name" : "Mosaic"
+  } ]
+}, {
+  "id" : 61608,
+  "name" : "Mosaic Agnitio",
+  "domains" : [ {
+    "id" : 15077,
+    "name" : "Mosaic"
+  } ]
+}, {
+  "id" : 61611,
+  "name" : "Mosaic Catalog",
+  "domains" : [ {
+    "id" : 15077,
+    "name" : "Mosaic"
+  } ]
+}, {
+  "id" : 61612,
+  "name" : "Mosaic Decisions",
+  "domains" : [ {
+    "id" : 15077,
+    "name" : "Mosaic"
+  } ]
+}, {
+  "id" : 70450,
+  "name" : "PaaSify",
+  "domains" : [ {
+    "id" : 15334,
+    "name" : "Cloud"
+  } ]
+}, {
+  "id" : 99776,
+  "name" : "Private Eye",
+  "domains" : [ {
+    "id" : 15340,
+    "name" : "Other"
+  } ]
+} ]
+2021-08-24 17:46:53,470 INFO c.c.h.e.i.ExcelImporterApplication [main] Started ExcelImporterApplication in 98.918 seconds (JVM running for 103.485)
+2021-08-24 20:58:17,667 INFO c.c.h.e.i.ExcelImporterApplication [main] Starting ExcelImporterApplication on BBALAP1 with PID 129112 (C:\Users\BBA\Downloads\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE\Highlight-Excel-5.3.50-RELEASE.jar started by BBA in C:\Users\BBA\Downloads\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE)
+2021-08-24 20:58:17,673 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Running with Spring Boot v1.5.16.RELEASE, Spring v4.3.19.RELEASE
+2021-08-24 20:58:17,674 INFO c.c.h.e.i.ExcelImporterApplication [main] No active profile set, falling back to default profiles: default
+2021-08-24 20:58:30,409 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Application version: 5.3.50-RELEASE
+2021-08-24 20:58:30,409 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter host: https://rpa.casthighlight.com/WS2/domains/9332
+2021-08-24 20:58:30,409 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter file: Highlight-Excel_lti.xlsx
+2021-08-24 20:58:30,605 INFO c.c.h.e.i.AbstractImporter [main] ********** Start import process: Domains **********
+2021-08-24 20:58:30,681 INFO c.c.h.e.i.AbstractImporter [main] 0 data(s) to process
+2021-08-24 20:58:30,849 DEBUG c.c.h.e.i.d.DomainsImporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/9332/domains with datas
+[ ]
+2021-08-24 20:58:34,624 DEBUG c.c.h.e.i.d.DomainsImporter [main] Rest API response 
+{
+  "headers" : {
+    "Server" : [ "nginx" ],
+    "Date" : [ "Tue, 24 Aug 2021 15:28:05 GMT" ],
+    "Content-Type" : [ "application/json" ],
+    "Content-Length" : [ "28" ],
+    "Connection" : [ "keep-alive" ],
+    "Access-Control-Allow-Origin" : [ "*" ],
+    "Access-Control-Allow-Headers" : [ "origin, content-type, accept, authorization,location" ],
+    "Access-Control-Allow-Credentials" : [ "true" ],
+    "Access-Control-Expose-Headers" : [ "Location" ],
+    "Access-Control-Allow-Methods" : [ "GET, OPTIONS, HEAD, PUT, POST" ],
+    "Set-Cookie" : [ "JSESSIONID=7B063004447D255BC799C4DCF9CF5640; Path=/; HTTPOnly; Secure; Secure; HttpOnly" ],
+    "X-Application-Context" : [ "application:postgres-hikari,csrf,audit,saml,saml-proxy,oauth" ],
+    "X-Frame-Options" : [ "DENY" ],
+    "X-Content-Type-Options" : [ "nosniff" ],
+    "X-XSS-Protection" : [ "1; mode=block" ],
+    "Cache-Control" : [ "no-cache,no-store" ]
+  },
+  "body" : {
+    "result" : null,
+    "error" : null
+  },
+  "statusCode" : "OK",
+  "statusCodeValue" : 200
+}
+2021-08-24 20:58:34,625 INFO c.c.h.e.i.AbstractImporter [main] ********** Start import process: Users **********
+2021-08-24 20:58:34,630 INFO c.c.h.e.i.AbstractImporter [main] 0 data(s) to process
+2021-08-24 20:58:34,631 DEBUG c.c.h.e.i.u.UsersImporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/9332/users with datas
+[ ]
+2021-08-24 20:58:35,067 DEBUG c.c.h.e.i.u.UsersImporter [main] Rest API response 
+{
+  "headers" : {
+    "Server" : [ "nginx" ],
+    "Date" : [ "Tue, 24 Aug 2021 15:28:06 GMT" ],
+    "Content-Type" : [ "application/json" ],
+    "Content-Length" : [ "28" ],
+    "Connection" : [ "keep-alive" ],
+    "Access-Control-Allow-Origin" : [ "*" ],
+    "Access-Control-Allow-Headers" : [ "origin, content-type, accept, authorization,location" ],
+    "Access-Control-Allow-Credentials" : [ "true" ],
+    "Access-Control-Expose-Headers" : [ "Location" ],
+    "Access-Control-Allow-Methods" : [ "GET, OPTIONS, HEAD, PUT, POST" ],
+    "X-Application-Context" : [ "application:postgres-hikari,csrf,audit,saml,saml-proxy,oauth" ],
+    "X-Frame-Options" : [ "DENY" ],
+    "X-Content-Type-Options" : [ "nosniff" ],
+    "X-XSS-Protection" : [ "1; mode=block" ],
+    "Cache-Control" : [ "no-cache,no-store" ]
+  },
+  "body" : {
+    "result" : null,
+    "error" : null
+  },
+  "statusCode" : "OK",
+  "statusCodeValue" : 200
+}
+2021-08-24 20:58:35,069 INFO c.c.h.e.i.AbstractImporter [main] ********** Start import process: Applications **********
+2021-08-24 20:58:36,818 INFO c.c.h.e.i.AbstractImporter [main] 4 data(s) to process
+2021-08-24 20:58:36,824 DEBUG c.c.h.e.i.a.ApplicationsImporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/9332/applications with datas
+[ {
+  "name" : "Test1",
+  "clientRef" : "t1",
+  "domains" : [ {
+    "id" : 9332
+  } ]
+}, {
+  "name" : "Test2",
+  "clientRef" : "t2",
+  "domains" : [ {
+    "id" : 9332
+  } ]
+}, {
+  "name" : "Test3",
+  "clientRef" : "t3",
+  "domains" : [ {
+    "id" : 9332
+  } ]
+}, {
+  "name" : "Test4",
+  "clientRef" : "t4",
+  "domains" : [ {
+    "id" : 9332
+  } ]
+} ]
+2021-08-24 20:58:37,317 DEBUG c.c.h.e.i.a.ApplicationsImporter [main] Rest API response 
+{
+  "headers" : {
+    "Server" : [ "nginx" ],
+    "Date" : [ "Tue, 24 Aug 2021 15:28:08 GMT" ],
+    "Content-Type" : [ "application/json" ],
+    "Content-Length" : [ "305" ],
+    "Connection" : [ "keep-alive" ],
+    "Access-Control-Allow-Origin" : [ "*" ],
+    "Access-Control-Allow-Headers" : [ "origin, content-type, accept, authorization,location" ],
+    "Access-Control-Allow-Credentials" : [ "true" ],
+    "Access-Control-Expose-Headers" : [ "Location" ],
+    "Access-Control-Allow-Methods" : [ "GET, OPTIONS, HEAD, PUT, POST" ],
+    "X-Application-Context" : [ "application:postgres-hikari,csrf,audit,saml,saml-proxy,oauth" ],
+    "X-Frame-Options" : [ "DENY" ],
+    "X-Content-Type-Options" : [ "nosniff" ],
+    "X-XSS-Protection" : [ "1; mode=block" ],
+    "Cache-Control" : [ "no-cache,no-store" ]
+  },
+  "body" : {
+    "result" : [ {
+      "id" : 115807,
+      "name" : "Test4",
+      "clientRef" : "t4",
+      "domains" : [ {
+        "id" : 9332
+      } ]
+    }, {
+      "id" : 115808,
+      "name" : "Test1",
+      "clientRef" : "t1",
+      "domains" : [ {
+        "id" : 9332
+      } ]
+    }, {
+      "id" : 115809,
+      "name" : "Test2",
+      "clientRef" : "t2",
+      "domains" : [ {
+        "id" : 9332
+      } ]
+    }, {
+      "id" : 115810,
+      "name" : "Test3",
+      "clientRef" : "t3",
+      "domains" : [ {
+        "id" : 9332
+      } ]
+    } ],
+    "error" : null
+  },
+  "statusCode" : "OK",
+  "statusCodeValue" : 200
+}
+2021-08-24 20:58:37,318 INFO c.c.h.e.i.AbstractImporter [main] 4 data(s) added
+2021-08-24 20:58:37,944 INFO c.c.h.e.i.ExcelImporterApplication [main] Started ExcelImporterApplication in 22.577 seconds (JVM running for 27.878)
+2021-08-26 16:42:45,227 INFO c.c.h.e.i.ExcelImporterApplication [main] Starting ExcelImporterApplication on BBALAP1 with PID 317212 (C:\Users\BBA\Desktop\HighlightAutomation\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE\Highlight-Excel-5.3.50-RELEASE.jar started by BBA in C:\Users\BBA\Desktop\HighlightAutomation\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE)
+2021-08-26 16:42:45,232 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Running with Spring Boot v1.5.16.RELEASE, Spring v4.3.19.RELEASE
+2021-08-26 16:42:45,232 INFO c.c.h.e.i.ExcelImporterApplication [main] No active profile set, falling back to default profiles: default
+2021-08-26 16:42:57,663 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Application version: 5.3.50-RELEASE
+2021-08-26 16:42:57,663 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter host: https://rpa.casthighlight.com/WS2/domains/16871
+2021-08-26 16:42:57,663 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter file: Highlight-Excel_lti_preview.xlsx
+2021-08-26 16:42:57,749 DEBUG c.c.h.e.i.d.DomainsExporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/16871/domains
+2021-08-26 16:43:01,001 DEBUG c.c.h.e.i.d.DomainsExporter [main] Rest API response 
+[ {
+  "id" : 16871,
+  "name" : "L&T Infotech - Hackathon",
+  "parent" : {
+    "id" : 1,
+    "name" : "R&D",
+    "parent" : {
+      "id" : -1
+    }
+  }
+}, {
+  "id" : 16882,
+  "name" : "Preview",
+  "parent" : {
+    "id" : 16871,
+    "name" : "L&T Infotech - Hackathon",
+    "parent" : {
+      "id" : 1
+    }
+  }
+} ]
+2021-08-26 16:43:02,908 DEBUG c.c.h.e.i.u.UsersExporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/16871/users?expand=role
+2021-08-26 16:43:03,632 DEBUG c.c.h.e.i.u.UsersExporter [main] Rest API response 
+[ {
+  "id" : 16974,
+  "email" : "b.prakash+Solvathon@castsoftware.com",
+  "firstName" : "Bhanu",
+  "lastName" : "Prakash",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16975,
+  "email" : "R.Symmonds+Solvathon@castsoftware.com",
+  "firstName" : "Richard",
+  "lastName" : "Symmonds",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16938,
+  "email" : "Shivaramakrishnan.Iyer+Hackathon@lntinfotech.com",
+  "firstName" : "Shivaramakrishnan",
+  "lastName" : "Iyer+Hackathon",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16945,
+  "email" : "avinash.bhate+Solvathon@lntinfotech.com",
+  "firstName" : "avinash",
+  "lastName" : "bhate+Solvathon",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16944,
+  "email" : "santhosh.anumolu+Solvathon@lntinfotech.com",
+  "firstName" : "santhosh",
+  "lastName" : "anumolu+Solvathon",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16882,
+    "domain_name" : "Preview",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16947,
+  "email" : "sunil.agrawal+Solvathon@lntinfotech.com",
+  "firstName" : "sunil",
+  "lastName" : "agrawal+Solvathon",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16946,
+  "email" : "yogesh.chitari+Solvathon@lntinfotech.com",
+  "firstName" : "yogesh",
+  "lastName" : "chitari+Solvathon",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+} ]
+2021-08-26 16:43:03,716 DEBUG c.c.h.e.i.a.ApplicationsExporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/16871/applications
+2021-08-26 16:43:04,144 DEBUG c.c.h.e.i.a.ApplicationsExporter [main] Rest API response 
+[ ]
+2021-08-26 16:43:04,764 INFO c.c.h.e.i.ExcelImporterApplication [main] Started ExcelImporterApplication in 21.855 seconds (JVM running for 27.21)
+2021-08-26 16:46:24,603 INFO c.c.h.e.i.ExcelImporterApplication [main] Starting ExcelImporterApplication on BBALAP1 with PID 339640 (C:\Users\BBA\Desktop\HighlightAutomation\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE\Highlight-Excel-5.3.50-RELEASE.jar started by BBA in C:\Users\BBA\Desktop\HighlightAutomation\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE)
+2021-08-26 16:46:24,609 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Running with Spring Boot v1.5.16.RELEASE, Spring v4.3.19.RELEASE
+2021-08-26 16:46:24,609 INFO c.c.h.e.i.ExcelImporterApplication [main] No active profile set, falling back to default profiles: default
+2021-08-26 16:46:37,748 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Application version: 5.3.50-RELEASE
+2021-08-26 16:46:37,749 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter host: https://rpa.casthighlight.com/WS2/domains/16871
+2021-08-26 16:46:37,749 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter file: Highlight-Excel_lti_preview.xlsx
+2021-08-26 16:46:37,825 INFO c.c.h.e.i.AbstractImporter [main] ********** Start import process: Domains **********
+2021-08-26 16:46:37,851 INFO c.c.h.e.i.AbstractImporter [main] 0 data(s) to process
+2021-08-26 16:46:37,943 DEBUG c.c.h.e.i.d.DomainsImporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/16871/domains with datas
+[ ]
+2021-08-26 16:46:40,884 DEBUG c.c.h.e.i.d.DomainsImporter [main] Rest API response 
+{
+  "headers" : {
+    "Server" : [ "nginx" ],
+    "Date" : [ "Thu, 26 Aug 2021 11:16:12 GMT" ],
+    "Content-Type" : [ "application/json" ],
+    "Content-Length" : [ "28" ],
+    "Connection" : [ "keep-alive" ],
+    "Access-Control-Allow-Origin" : [ "*" ],
+    "Access-Control-Allow-Headers" : [ "origin, content-type, accept, authorization,location" ],
+    "Access-Control-Allow-Credentials" : [ "true" ],
+    "Access-Control-Expose-Headers" : [ "Location" ],
+    "Access-Control-Allow-Methods" : [ "GET, OPTIONS, HEAD, PUT, POST" ],
+    "Set-Cookie" : [ "JSESSIONID=8ADFCE16190E9F47E8BF125B70628B7E; Path=/; HTTPOnly; Secure; Secure; HttpOnly" ],
+    "X-Application-Context" : [ "application:postgres-hikari,csrf,audit,saml,saml-proxy,oauth" ],
+    "X-Frame-Options" : [ "DENY" ],
+    "X-Content-Type-Options" : [ "nosniff" ],
+    "X-XSS-Protection" : [ "1; mode=block" ],
+    "Cache-Control" : [ "no-cache,no-store" ]
+  },
+  "body" : {
+    "result" : null,
+    "error" : null
+  },
+  "statusCode" : "OK",
+  "statusCodeValue" : 200
+}
+2021-08-26 16:46:40,885 INFO c.c.h.e.i.AbstractImporter [main] ********** Start import process: Users **********
+2021-08-26 16:46:40,891 INFO c.c.h.e.i.AbstractImporter [main] 0 data(s) to process
+2021-08-26 16:46:40,892 DEBUG c.c.h.e.i.u.UsersImporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/16871/users with datas
+[ ]
+2021-08-26 16:46:41,279 DEBUG c.c.h.e.i.u.UsersImporter [main] Rest API response 
+{
+  "headers" : {
+    "Server" : [ "nginx" ],
+    "Date" : [ "Thu, 26 Aug 2021 11:16:12 GMT" ],
+    "Content-Type" : [ "application/json" ],
+    "Content-Length" : [ "28" ],
+    "Connection" : [ "keep-alive" ],
+    "Access-Control-Allow-Origin" : [ "*" ],
+    "Access-Control-Allow-Headers" : [ "origin, content-type, accept, authorization,location" ],
+    "Access-Control-Allow-Credentials" : [ "true" ],
+    "Access-Control-Expose-Headers" : [ "Location" ],
+    "Access-Control-Allow-Methods" : [ "GET, OPTIONS, HEAD, PUT, POST" ],
+    "X-Application-Context" : [ "application:postgres-hikari,csrf,audit,saml,saml-proxy,oauth" ],
+    "X-Frame-Options" : [ "DENY" ],
+    "X-Content-Type-Options" : [ "nosniff" ],
+    "X-XSS-Protection" : [ "1; mode=block" ],
+    "Cache-Control" : [ "no-cache,no-store" ]
+  },
+  "body" : {
+    "result" : null,
+    "error" : null
+  },
+  "statusCode" : "OK",
+  "statusCodeValue" : 200
+}
+2021-08-26 16:46:41,280 INFO c.c.h.e.i.AbstractImporter [main] ********** Start import process: Applications **********
+2021-08-26 16:46:43,353 INFO c.c.h.e.i.AbstractImporter [main] 4 data(s) to process
+2021-08-26 16:46:43,366 DEBUG c.c.h.e.i.a.ApplicationsImporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/16871/applications with datas
+[ {
+  "name" : "App1",
+  "clientRef" : "t1",
+  "domains" : [ {
+    "id" : 16882
+  } ],
+  "contributors" : [ {
+    "id" : 16974
+  } ]
+}, {
+  "name" : "App2",
+  "clientRef" : "t2",
+  "domains" : [ {
+    "id" : 16882
+  } ],
+  "contributors" : [ {
+    "id" : 16974
+  } ]
+}, {
+  "name" : "App3",
+  "clientRef" : "t3",
+  "domains" : [ {
+    "id" : 16882
+  } ],
+  "contributors" : [ {
+    "id" : 16974
+  } ]
+}, {
+  "name" : "App4",
+  "clientRef" : "t4",
+  "domains" : [ {
+    "id" : 16882
+  } ],
+  "contributors" : [ {
+    "id" : 16974
+  } ]
+} ]
+2021-08-26 16:46:43,868 DEBUG c.c.h.e.i.a.ApplicationsImporter [main] Rest API response 
+{
+  "headers" : {
+    "Server" : [ "nginx" ],
+    "Date" : [ "Thu, 26 Aug 2021 11:16:15 GMT" ],
+    "Content-Type" : [ "application/json" ],
+    "Content-Length" : [ "425" ],
+    "Connection" : [ "keep-alive" ],
+    "Access-Control-Allow-Origin" : [ "*" ],
+    "Access-Control-Allow-Headers" : [ "origin, content-type, accept, authorization,location" ],
+    "Access-Control-Allow-Credentials" : [ "true" ],
+    "Access-Control-Expose-Headers" : [ "Location" ],
+    "Access-Control-Allow-Methods" : [ "GET, OPTIONS, HEAD, PUT, POST" ],
+    "X-Application-Context" : [ "application:postgres-hikari,csrf,audit,saml,saml-proxy,oauth" ],
+    "X-Frame-Options" : [ "DENY" ],
+    "X-Content-Type-Options" : [ "nosniff" ],
+    "X-XSS-Protection" : [ "1; mode=block" ],
+    "Cache-Control" : [ "no-cache,no-store" ]
+  },
+  "body" : {
+    "result" : [ {
+      "id" : 115818,
+      "name" : "App4",
+      "clientRef" : "t4",
+      "domains" : [ {
+        "id" : 16882
+      } ],
+      "contributors" : [ {
+        "id" : 16974
+      } ]
+    }, {
+      "id" : 115819,
+      "name" : "App1",
+      "clientRef" : "t1",
+      "domains" : [ {
+        "id" : 16882
+      } ],
+      "contributors" : [ {
+        "id" : 16974
+      } ]
+    }, {
+      "id" : 115860,
+      "name" : "App2",
+      "clientRef" : "t2",
+      "domains" : [ {
+        "id" : 16882
+      } ],
+      "contributors" : [ {
+        "id" : 16974
+      } ]
+    }, {
+      "id" : 115861,
+      "name" : "App3",
+      "clientRef" : "t3",
+      "domains" : [ {
+        "id" : 16882
+      } ],
+      "contributors" : [ {
+        "id" : 16974
+      } ]
+    } ],
+    "error" : null
+  },
+  "statusCode" : "OK",
+  "statusCodeValue" : 200
+}
+2021-08-26 16:46:43,869 INFO c.c.h.e.i.AbstractImporter [main] 4 data(s) added
+2021-08-26 16:46:44,329 INFO c.c.h.e.i.ExcelImporterApplication [main] Started ExcelImporterApplication in 22.106 seconds (JVM running for 27.127)
+2021-08-30 10:36:54,631 INFO c.c.h.e.i.ExcelImporterApplication [main] Starting ExcelImporterApplication on BBALAP1 with PID 123484 (C:\Users\BBA\Desktop\HighlightAutomation\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE\Highlight-Excel-5.3.50-RELEASE.jar started by BBA in C:\Users\BBA\Desktop\HighlightAutomation\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE)
+2021-08-30 10:36:54,663 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Running with Spring Boot v1.5.16.RELEASE, Spring v4.3.19.RELEASE
+2021-08-30 10:36:54,663 INFO c.c.h.e.i.ExcelImporterApplication [main] No active profile set, falling back to default profiles: default
+2021-08-30 10:37:10,627 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Application version: 5.3.50-RELEASE
+2021-08-30 10:37:10,627 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter host: https://rpa.casthighlight.com/WS2/domains/16871
+2021-08-30 10:37:10,627 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter file: Highlight-Excel_lti_new.xlsx
+2021-08-30 10:37:10,693 DEBUG c.c.h.e.i.d.DomainsExporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/16871/domains
+2021-08-30 10:37:13,221 ERROR o.s.b.SpringApplication [main] Application startup failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:726) ~[spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:713) [spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703) [spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304) [spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	at com.castsoftware.highlight.excel.importer.ExcelImporterApplication.main(ExcelImporterApplication.java:45) [classes!/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_301]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_301]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_301]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_301]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48) [Highlight-Excel-5.3.50-RELEASE.jar:?]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87) [Highlight-Excel-5.3.50-RELEASE.jar:?]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50) [Highlight-Excel-5.3.50-RELEASE.jar:?]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51) [Highlight-Excel-5.3.50-RELEASE.jar:?]
+Caused by: org.springframework.web.client.HttpClientErrorException: 401 
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:86) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:708) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:661) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:621) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:539) ~[spring-web-4.3.19.RELEASE.jar!/:4.3.19.RELEASE]
+	at com.castsoftware.highlight.excel.importer.domain.DomainsExporter.getDatas(DomainsExporter.java:50) ~[classes!/:?]
+	at com.castsoftware.highlight.excel.importer.AbstractExporter.exportDatas(AbstractExporter.java:45) ~[classes!/:?]
+	at com.castsoftware.highlight.excel.importer.service.ExporterServiceImpl.exportData(ExporterServiceImpl.java:32) ~[classes!/:?]
+	at com.castsoftware.highlight.excel.importer.ExcelImporterApplication.run(ExcelImporterApplication.java:67) ~[classes!/:?]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:723) ~[spring-boot-1.5.16.RELEASE.jar!/:1.5.16.RELEASE]
+	... 14 more
+2021-08-30 10:38:30,526 INFO c.c.h.e.i.ExcelImporterApplication [main] Starting ExcelImporterApplication on BBALAP1 with PID 139772 (C:\Users\BBA\Desktop\HighlightAutomation\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE\Highlight-Excel-5.3.50-RELEASE.jar started by BBA in C:\Users\BBA\Desktop\HighlightAutomation\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE)
+2021-08-30 10:38:30,539 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Running with Spring Boot v1.5.16.RELEASE, Spring v4.3.19.RELEASE
+2021-08-30 10:38:30,539 INFO c.c.h.e.i.ExcelImporterApplication [main] No active profile set, falling back to default profiles: default
+2021-08-30 10:38:44,982 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Application version: 5.3.50-RELEASE
+2021-08-30 10:38:44,983 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter host: https://rpa.casthighlight.com/WS2/domains/16871
+2021-08-30 10:38:44,983 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter file: Highlight-Excel_lti_new.xlsx
+2021-08-30 10:38:45,082 DEBUG c.c.h.e.i.d.DomainsExporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/16871/domains
+2021-08-30 10:38:48,098 DEBUG c.c.h.e.i.d.DomainsExporter [main] Rest API response 
+[ {
+  "id" : 16871,
+  "name" : "L&T Infotech - Hackathon",
+  "parent" : {
+    "id" : 1,
+    "name" : "R&D",
+    "parent" : {
+      "id" : -1
+    }
+  }
+}, {
+  "id" : 16882,
+  "name" : "Preview",
+  "parent" : {
+    "id" : 16871,
+    "name" : "L&T Infotech - Hackathon",
+    "parent" : {
+      "id" : 1
+    }
+  }
+} ]
+2021-08-30 10:38:51,114 DEBUG c.c.h.e.i.u.UsersExporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/16871/users?expand=role
+2021-08-30 10:38:51,612 DEBUG c.c.h.e.i.u.UsersExporter [main] Rest API response 
+[ {
+  "id" : 16974,
+  "email" : "b.prakash+Solvathon@castsoftware.com",
+  "firstName" : "Bhanu",
+  "lastName" : "Prakash",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16975,
+  "email" : "R.Symmonds+Solvathon@castsoftware.com",
+  "firstName" : "Richard",
+  "lastName" : "Symmonds",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16938,
+  "email" : "Shivaramakrishnan.Iyer+Hackathon@lntinfotech.com",
+  "firstName" : "Shivaramakrishnan",
+  "lastName" : "Iyer+Hackathon",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16945,
+  "email" : "avinash.bhate+Solvathon@lntinfotech.com",
+  "firstName" : "avinash",
+  "lastName" : "bhate+Solvathon",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16944,
+  "email" : "santhosh.anumolu+Solvathon@lntinfotech.com",
+  "firstName" : "santhosh",
+  "lastName" : "anumolu+Solvathon",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16947,
+  "email" : "sunil.agrawal+Solvathon@lntinfotech.com",
+  "firstName" : "sunil",
+  "lastName" : "agrawal+Solvathon",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16946,
+  "email" : "yogesh.chitari+Solvathon@lntinfotech.com",
+  "firstName" : "yogesh",
+  "lastName" : "chitari+Solvathon",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+} ]
+2021-08-30 10:38:51,684 DEBUG c.c.h.e.i.a.ApplicationsExporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/16871/applications
+2021-08-30 10:38:52,355 DEBUG c.c.h.e.i.a.ApplicationsExporter [main] Rest API response 
+[ {
+  "id" : 115869,
+  "name" : "42",
+  "clientRef" : "s2",
+  "domains" : [ {
+    "id" : 16871,
+    "name" : "L&T Infotech - Hackathon"
+  } ]
+}, {
+  "id" : 115868,
+  "name" : "Advisor_Buddy",
+  "clientRef" : "s1",
+  "domains" : [ {
+    "id" : 16871,
+    "name" : "L&T Infotech - Hackathon"
+  } ]
+}, {
+  "id" : 115819,
+  "name" : "App1",
+  "clientRef" : "t1",
+  "domains" : [ {
+    "id" : 16882,
+    "name" : "Preview"
+  } ],
+  "contributors" : [ {
+    "id" : 16974,
+    "email" : "b.prakash+Solvathon@castsoftware.com",
+    "firstName" : "Bhanu",
+    "lastName" : "Prakash",
+    "status" : "activated"
+  } ]
+}, {
+  "id" : 115860,
+  "name" : "App2",
+  "clientRef" : "t2",
+  "domains" : [ {
+    "id" : 16882,
+    "name" : "Preview"
+  } ],
+  "contributors" : [ {
+    "id" : 16974,
+    "email" : "b.prakash+Solvathon@castsoftware.com",
+    "firstName" : "Bhanu",
+    "lastName" : "Prakash",
+    "status" : "activated"
+  } ]
+}, {
+  "id" : 115861,
+  "name" : "App3",
+  "clientRef" : "t3",
+  "domains" : [ {
+    "id" : 16882,
+    "name" : "Preview"
+  } ],
+  "contributors" : [ {
+    "id" : 16974,
+    "email" : "b.prakash+Solvathon@castsoftware.com",
+    "firstName" : "Bhanu",
+    "lastName" : "Prakash",
+    "status" : "activated"
+  } ]
+}, {
+  "id" : 115818,
+  "name" : "App4",
+  "clientRef" : "t4",
+  "domains" : [ {
+    "id" : 16882,
+    "name" : "Preview"
+  } ],
+  "contributors" : [ {
+    "id" : 16974,
+    "email" : "b.prakash+Solvathon@castsoftware.com",
+    "firstName" : "Bhanu",
+    "lastName" : "Prakash",
+    "status" : "activated"
+  } ]
+} ]
+2021-08-30 10:38:53,237 INFO c.c.h.e.i.ExcelImporterApplication [main] Started ExcelImporterApplication in 24.704 seconds (JVM running for 30.804)
+2021-08-30 10:41:17,498 INFO c.c.h.e.i.ExcelImporterApplication [main] Starting ExcelImporterApplication on BBALAP1 with PID 139904 (C:\Users\BBA\Desktop\HighlightAutomation\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE\Highlight-Excel-5.3.50-RELEASE.jar started by BBA in C:\Users\BBA\Desktop\HighlightAutomation\Highlight-Excel\Highlight-Excel-5.3.50-RELEASE)
+2021-08-30 10:41:17,504 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Running with Spring Boot v1.5.16.RELEASE, Spring v4.3.19.RELEASE
+2021-08-30 10:41:17,504 INFO c.c.h.e.i.ExcelImporterApplication [main] No active profile set, falling back to default profiles: default
+2021-08-30 10:41:31,599 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Application version: 5.3.50-RELEASE
+2021-08-30 10:41:31,599 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter host: https://rpa.casthighlight.com/WS2/domains/16871
+2021-08-30 10:41:31,599 DEBUG c.c.h.e.i.ExcelImporterApplication [main] Parameter file: Highlight-Excel_solv.xlsx
+2021-08-30 10:41:31,752 DEBUG c.c.h.e.i.d.DomainsExporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/16871/domains
+2021-08-30 10:41:35,109 DEBUG c.c.h.e.i.d.DomainsExporter [main] Rest API response 
+[ {
+  "id" : 16871,
+  "name" : "L&T Infotech - Hackathon",
+  "parent" : {
+    "id" : 1,
+    "name" : "R&D",
+    "parent" : {
+      "id" : -1
+    }
+  }
+}, {
+  "id" : 16882,
+  "name" : "Preview",
+  "parent" : {
+    "id" : 16871,
+    "name" : "L&T Infotech - Hackathon",
+    "parent" : {
+      "id" : 1
+    }
+  }
+} ]
+2021-08-30 10:41:37,235 DEBUG c.c.h.e.i.u.UsersExporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/16871/users?expand=role
+2021-08-30 10:41:37,742 DEBUG c.c.h.e.i.u.UsersExporter [main] Rest API response 
+[ {
+  "id" : 16974,
+  "email" : "b.prakash+Solvathon@castsoftware.com",
+  "firstName" : "Bhanu",
+  "lastName" : "Prakash",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16975,
+  "email" : "R.Symmonds+Solvathon@castsoftware.com",
+  "firstName" : "Richard",
+  "lastName" : "Symmonds",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16938,
+  "email" : "Shivaramakrishnan.Iyer+Hackathon@lntinfotech.com",
+  "firstName" : "Shivaramakrishnan",
+  "lastName" : "Iyer+Hackathon",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16945,
+  "email" : "avinash.bhate+Solvathon@lntinfotech.com",
+  "firstName" : "avinash",
+  "lastName" : "bhate+Solvathon",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16944,
+  "email" : "santhosh.anumolu+Solvathon@lntinfotech.com",
+  "firstName" : "santhosh",
+  "lastName" : "anumolu+Solvathon",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16947,
+  "email" : "sunil.agrawal+Solvathon@lntinfotech.com",
+  "firstName" : "sunil",
+  "lastName" : "agrawal+Solvathon",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+}, {
+  "id" : 16946,
+  "email" : "yogesh.chitari+Solvathon@lntinfotech.com",
+  "firstName" : "yogesh",
+  "lastName" : "chitari+Solvathon",
+  "status" : "activated",
+  "roles" : [ {
+    "domain_id" : 16871,
+    "domain_name" : "L&T Infotech - Hackathon",
+    "role" : "manager"
+  } ]
+} ]
+2021-08-30 10:41:37,847 DEBUG c.c.h.e.i.a.ApplicationsExporter [main] Calling url https://rpa.casthighlight.com/WS2/domains/16871/applications
+2021-08-30 10:41:38,551 DEBUG c.c.h.e.i.a.ApplicationsExporter [main] Rest API response 
+[ {
+  "id" : 115869,
+  "name" : "42",
+  "clientRef" : "s2",
+  "domains" : [ {
+    "id" : 16871,
+    "name" : "L&T Infotech - Hackathon"
+  } ]
+}, {
+  "id" : 115868,
+  "name" : "Advisor_Buddy",
+  "clientRef" : "s1",
+  "domains" : [ {
+    "id" : 16871,
+    "name" : "L&T Infotech - Hackathon"
+  } ]
+}, {
+  "id" : 115819,
+  "name" : "App1",
+  "clientRef" : "t1",
+  "domains" : [ {
+    "id" : 16882,
+    "name" : "Preview"
+  } ],
+  "contributors" : [ {
+    "id" : 16974,
+    "email" : "b.prakash+Solvathon@castsoftware.com",
+    "firstName" : "Bhanu",
+    "lastName" : "Prakash",
+    "status" : "activated"
+  } ]
+}, {
+  "id" : 115860,
+  "name" : "App2",
+  "clientRef" : "t2",
+  "domains" : [ {
+    "id" : 16882,
+    "name" : "Preview"
+  } ],
+  "contributors" : [ {
+    "id" : 16974,
+    "email" : "b.prakash+Solvathon@castsoftware.com",
+    "firstName" : "Bhanu",
+    "lastName" : "Prakash",
+    "status" : "activated"
+  } ]
+}, {
+  "id" : 115861,
+  "name" : "App3",
+  "clientRef" : "t3",
+  "domains" : [ {
+    "id" : 16882,
+    "name" : "Preview"
+  } ],
+  "contributors" : [ {
+    "id" : 16974,
+    "email" : "b.prakash+Solvathon@castsoftware.com",
+    "firstName" : "Bhanu",
+    "lastName" : "Prakash",
+    "status" : "activated"
+  } ]
+}, {
+  "id" : 115818,
+  "name" : "App4",
+  "clientRef" : "t4",
+  "domains" : [ {
+    "id" : 16882,
+    "name" : "Preview"
+  } ],
+  "contributors" : [ {
+    "id" : 16974,
+    "email" : "b.prakash+Solvathon@castsoftware.com",
+    "firstName" : "Bhanu",
+    "lastName" : "Prakash",
+    "status" : "activated"
+  } ]
+} ]
+2021-08-30 10:41:39,297 INFO c.c.h.e.i.ExcelImporterApplication [main] Started ExcelImporterApplication in 24.654 seconds (JVM running for 30.444)
